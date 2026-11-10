@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Trâm! 💖 - 11/11</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        roseGold: '#f472b6',
+                        violetDeep: '#1a0b2e',
+                        violetMid: '#2d124d',
+                        neonPink: '#e879f9',
+                        warmGold: '#FFD700',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        cursive: ['Dancing Script', 'cursive'],
+                        romantic: ['Great Vibes', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Rich Rose Gold & Deep Violet Night Background */
+        body {
+            background: linear-gradient(135deg, #0d021a 0%, #1a0b2e 35%, #2d124d 70%, #4a1259 100%);
+            background-attachment: fixed;
+            color: #fdf2f8;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Glassmorphism Styles (Rose Violet Aesthetic) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(244, 114, 182, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(74, 18, 89, 0.37);
+        }
+
+        .glass-button {
+            background: rgba(244, 114, 182, 0.18);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 114, 182, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glass-button:hover {
+            background: rgba(244, 114, 182, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 0 22px rgba(232, 121, 249, 0.7);
+        }
+
+        /* Candle Flame Glow & Animation */
+        .flame {
+            background: radial-gradient(ellipse at bottom, #ffff00 0%, #ff8000 60%, #ff0000 100%);
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 15px #ff8000, 0 0 30px #ffff00;
+            animation: flicker 1.2s infinite alternate ease-in-out;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+            50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+            100% { transform: scale(0.95) rotate(-1deg); opacity: 0.85; }
+        }
+
+        /* Gift Box Lid Animation */
+        .gift-box {
+            perspective: 1000px;
+        }
+        
+        .gift-lid {
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform-origin: top;
+        }
+
+        .gift-box.opened .gift-lid {
+            transform: rotateX(-110deg) translateY(-20px);
+        }
+
+        /* Text Glowing Effects (Pink Gold Glow) */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(244, 114, 182, 0.8), 0 0 30px rgba(232, 121, 249, 0.6), 0 0 45px rgba(255, 215, 0, 0.5);
+        }
+
+        /* IN-PLACE CHIBI DANCE ANIMATIONS */
+        .chibi-dancer {
+            position: relative;
+            z-index: 20;
+            pointer-events: auto;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        /* Unique Dancing Styles for In-Place Chibis */
+        @keyframes danceBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-16px) rotate(-4deg); }
+        }
+
+        @keyframes danceSway {
+            0%, 100% { transform: translateX(-5px) rotate(-6deg); }
+            50% { transform: translateX(5px) rotate(6deg); }
+        }
+
+        @keyframes danceHop {
+            0%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-20px) scale(1.05, 0.95); }
+            50% { transform: translateY(-22px) scale(0.95, 1.05); }
+        }
+
+        @keyframes danceWiggle {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+
+        .dance-1 { animation: danceBounce 1.6s infinite ease-in-out; }
+        .dance-2 { animation: danceSway 2s infinite ease-in-out; }
+        .dance-3 { animation: danceHop 1.4s infinite ease-in-out; }
+        .dance-4 { animation: danceWiggle 1.2s infinite ease-in-out; }
+        .dance-5 { animation: danceBounce 1.8s infinite ease-in-out reverse; }
+        .dance-6 { animation: danceSway 1.5s infinite ease-in-out reverse; }
+        .dance-7 { animation: danceHop 1.7s infinite ease-in-out; }
+        .dance-8 { animation: danceWiggle 1.3s infinite ease-in-out reverse; }
+
+        /* Party Mode Accelerated Dancing */
+        body.party-mode .chibi-dancer {
+            animation-duration: 0.5s !important;
+        }
+
+        /* Floating Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        .animate-float {
+            animation: floatSlow 4s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d021a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f472b6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-pink-50 flex flex-col justify-between selection:bg-pink-500 selection:text-white">
+
+    <!-- Interactive Heart & Star Particle Canvas -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Floating Audio Control Toggle -->
+    <div class="fixed top-5 right-5 z-50">
+        <button id="musicToggleBtn" onclick="toggleAudio()" class="glass-button rounded-full p-3.5 flex items-center justify-center gap-2 text-pink-100 shadow-lg cursor-pointer">
+            <i id="musicIcon" class="fa-solid fa-music text-xl animate-bounce"></i>
+            <span id="musicText" class="text-xs font-semibold uppercase tracking-wider hidden sm:inline">Phát Nhạc</span>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 py-10 flex-grow flex flex-col gap-16">
+
+        <!-- HERO SECTION -->
+        <section class="text-center pt-8 flex flex-col items-center justify-center min-h-[60vh]">
+            <!-- Sparkle Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-pink-200 text-sm font-medium mb-6 animate-pulse border border-pink-400/40">
+                <span class="text-warmGold">✨</span>
+                <span>Ngày Đặc Biệt 11 Tháng 11</span>
+                <span class="text-warmGold">✨</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="font-romantic text-5xl sm:text-7xl md:text-8xl text-pink-200 text-glow mb-4 leading-tight">
+                Chúc Mừng Sinh Nhật Trâm! 💖
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="font-cursive text-xl sm:text-3xl text-pink-300 max-w-2xl font-light mb-8">
+                "Ngày 11 tháng 11 - Một ngày rực rỡ & ngập tràn nụ cười dành riêng cho Trâm xinh đẹp!"
+            </p>
+
+            <!-- CHIBI DANCE PARTY CONTROL BUTTON -->
+            <button id="discoPartyBtn" onclick="togglePartyMode()" class="mb-6 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-500 text-white font-bold text-sm sm:text-base shadow-2xl transform transition hover:scale-105 active:scale-95 flex items-center gap-2 border border-pink-300/50">
+                <i class="fa-solid fa-compact-disc text-xl animate-spin" style="animation-duration: 3s;"></i>
+                <span id="partyBtnText">Bật Vũ Điệu Chibi Nhảy Siêu Nhanh! 🪩</span>
+            </button>
+
+            <!-- Interactive Countdown Timer / Birthday Clock -->
+            <div id="countdown" class="grid grid-cols-4 gap-3 sm:gap-6 my-4 w-full max-w-md">
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center border border-pink-400/30">
+                    <span id="days" class="text-2xl sm:text-4xl font-extrabold text-pink-200">00</span>
+                    <span class="text-[10px] sm:text-xs text-pink-300/90 uppercase tracking-widest mt-1">Ngày</span>
+                </div>
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center border border-pink-400/30">
+                    <span id="hours" class="text-2xl sm:text-4xl font-extrabold text-pink-200">00</span>
+                    <span class="text-[10px] sm:text-xs text-pink-300/90 uppercase tracking-widest mt-1">Giờ</span>
+                </div>
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center border border-pink-400/30">
+                    <span id="minutes" class="text-2xl sm:text-4xl font-extrabold text-pink-200">00</span>
+                    <span class="text-[10px] sm:text-xs text-pink-300/90 uppercase tracking-widest mt-1">Phút</span>
+                </div>
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center border border-pink-400/30">
+                    <span id="seconds" class="text-2xl sm:text-4xl font-extrabold text-pink-200">00</span>
+                    <span class="text-[10px] sm:text-xs text-pink-300/90 uppercase tracking-widest mt-1">Giây</span>
+                </div>
+            </div>
+
+            <p id="countdownMessage" class="text-xs text-pink-300/80 mt-2 italic"></p>
+        </section>
+
+        <!-- CHIBI DANCE PARTY STAGE (8 CHIBIS DANCING IN PLACE) -->
+        <section class="glass-card rounded-3xl p-6 sm:p-10 text-center border border-pink-400/30 shadow-2xl relative overflow-hidden">
+            <h2 class="text-2xl sm:text-3xl font-bold text-pink-200 mb-2">Vũ Đoàn Chibi Chúc Mừng Trâm 🐾✨</h2>
+            <p class="text-xs sm:text-sm text-pink-300/90 mb-8">Chạm vào các nhân vật để nghe lời chúc ngọt ngào!</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 justify-items-center items-end py-4">
+                <!-- Chibi 1: Mèo Chibi (Cat) -->
+                <div onclick="interactChibi(this, 'Chúc Trâm 11/11 xinh xắn tỏa sáng! 🐾')" class="chibi-dancer dance-1 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <path d="M 75 80 Q 90 70 85 55 Q 80 50 78 60" fill="none" stroke="#f472b6" stroke-width="6" stroke-linecap="round" />
+                            <ellipse cx="50" cy="75" rx="22" ry="20" fill="#ec4899" />
+                            <ellipse cx="50" cy="78" rx="14" ry="12" fill="#fbcfe8" />
+                            <circle cx="30" cy="72" r="5" fill="#f472b6" />
+                            <circle cx="70" cy="72" r="5" fill="#f472b6" />
+                            <circle cx="50" cy="42" r="28" fill="#f472b6" />
+                            <polygon points="26,22 36,5 44,22" fill="#ec4899" />
+                            <polygon points="29,20 36,9 41,20" fill="#fbcfe8" />
+                            <polygon points="74,22 64,5 56,22" fill="#ec4899" />
+                            <polygon points="71,20 64,9 59,20" fill="#fbcfe8" />
+                            <ellipse cx="40" cy="40" rx="3.5" ry="5" fill="#4c1d95" />
+                            <ellipse cx="60" cy="40" rx="3.5" ry="5" fill="#4c1d95" />
+                            <circle cx="41.5" cy="38.5" r="1.5" fill="#FFF" />
+                            <circle cx="61.5" cy="38.5" r="1.5" fill="#FFF" />
+                            <ellipse cx="33" cy="46" rx="4" ry="2.5" fill="#f472b6" opacity="0.8" />
+                            <ellipse cx="67" cy="46" rx="4" ry="2.5" fill="#f472b6" opacity="0.8" />
+                            <polygon points="49,44 51,44 50,46" fill="#be185d" />
+                            <path d="M 46 48 Q 50 52 54 48" fill="none" stroke="#4c1d95" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Mèo Trâm 🐱</span>
+                </div>
+
+                <!-- Chibi 2: Thỏ Chibi (Bunny) -->
+                <div onclick="interactChibi(this, 'Quẩy sinh nhật 11/11 thôi Trâm ơi! 🐰✨')" class="chibi-dancer dance-2 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="75" rx="20" ry="18" fill="#FFFFFF" />
+                            <circle cx="30" cy="70" r="5" fill="#fbcfe8" />
+                            <circle cx="70" cy="70" r="5" fill="#fbcfe8" />
+                            <circle cx="50" cy="45" r="26" fill="#FFFFFF" />
+                            <ellipse cx="38" cy="16" rx="7" ry="18" fill="#FFFFFF" />
+                            <ellipse cx="38" cy="16" rx="4" ry="13" fill="#f472b6" />
+                            <ellipse cx="62" cy="16" rx="7" ry="18" fill="#FFFFFF" />
+                            <ellipse cx="62" cy="16" rx="4" ry="13" fill="#f472b6" />
+                            <path d="M 36 43 Q 40 38 44 43" fill="none" stroke="#4c1d95" stroke-width="2.5" stroke-linecap="round" />
+                            <path d="M 56 43 Q 60 38 64 43" fill="none" stroke="#4c1d95" stroke-width="2.5" stroke-linecap="round" />
+                            <circle cx="34" cy="48" r="4" fill="#f472b6" opacity="0.6" />
+                            <circle cx="66" cy="48" r="4" fill="#f472b6" opacity="0.6" />
+                            <circle cx="50" cy="49" r="2" fill="#be185d" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Thỏ Xinh 🐰</span>
+                </div>
+
+                <!-- Chibi 3: Gấu Pooh (Bear) -->
+                <div onclick="interactChibi(this, 'Chúc Trâm tuổi mới luôn ngọt ngào! 🐻🍯')" class="chibi-dancer dance-3 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="75" rx="24" ry="20" fill="#fb7185" />
+                            <ellipse cx="50" cy="76" rx="15" ry="13" fill="#ffe4e6" />
+                            <circle cx="28" cy="72" r="6" fill="#f43f5e" />
+                            <circle cx="72" cy="72" r="6" fill="#f43f5e" />
+                            <circle cx="50" cy="42" r="27" fill="#fb7185" />
+                            <circle cx="27" cy="24" r="9" fill="#fb7185" />
+                            <circle cx="27" cy="24" r="5" fill="#f43f5e" />
+                            <circle cx="73" cy="24" r="9" fill="#fb7185" />
+                            <circle cx="73" cy="24" r="5" fill="#f43f5e" />
+                            <ellipse cx="50" cy="46" rx="8" ry="6" fill="#ffe4e6" />
+                            <ellipse cx="50" cy="43" rx="3.5" ry="2.5" fill="#881337" />
+                            <circle cx="39" cy="39" r="3" fill="#881337" />
+                            <circle cx="61" cy="39" r="3" fill="#881337" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Gấu Pink 🐻</span>
+                </div>
+
+                <!-- Chibi 4: Vịt Vàng (Duck) -->
+                <div onclick="interactChibi(this, 'Quắc quắc! 11/11 rực rỡ nhé! 🐥💛')" class="chibi-dancer dance-4 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="75" rx="22" ry="18" fill="#FFD700" />
+                            <path d="M 28 72 Q 18 68 25 80" fill="none" stroke="#FFB703" stroke-width="5" stroke-linecap="round" />
+                            <path d="M 72 72 Q 82 68 75 80" fill="none" stroke="#FFB703" stroke-width="5" stroke-linecap="round" />
+                            <circle cx="50" cy="42" r="26" fill="#FFD700" />
+                            <ellipse cx="50" cy="46" rx="9" ry="5.5" fill="#FF8C00" />
+                            <ellipse cx="39" cy="38" rx="3" ry="4.5" fill="#4c1d95" />
+                            <ellipse cx="61" cy="38" rx="3" ry="4.5" fill="#4c1d95" />
+                            <circle cx="40" cy="37" r="1" fill="#FFF" />
+                            <circle cx="62" cy="37" r="1" fill="#FFF" />
+                            <circle cx="31" cy="44" r="4" fill="#f472b6" opacity="0.6" />
+                            <circle cx="69" cy="44" r="4" fill="#f472b6" opacity="0.6" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Vịt Vàng 🐥</span>
+                </div>
+
+                <!-- Chibi 5: Chim Cánh Cụt (Penguin) -->
+                <div onclick="interactChibi(this, 'Chúc Trâm siêu vui tươi & đáng yêu! 🐧❄️')" class="chibi-dancer dance-5 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="65" rx="26" ry="30" fill="#6b21a8" />
+                            <ellipse cx="50" cy="67" rx="18" ry="22" fill="#FFFFFF" />
+                            <polygon points="46,45 54,45 50,52" fill="#FF9F1C" />
+                            <circle cx="40" cy="40" r="3.5" fill="#3b0764" />
+                            <circle cx="60" cy="40" r="3.5" fill="#3b0764" />
+                            <circle cx="41" cy="39" r="1" fill="#FFF" />
+                            <circle cx="61" cy="39" r="1" fill="#FFF" />
+                            <ellipse cx="22" cy="65" rx="5" ry="14" fill="#6b21a8" transform="rotate(20 22 65)" />
+                            <ellipse cx="78" cy="65" rx="5" ry="14" fill="#6b21a8" transform="rotate(-20 78 65)" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Cánh Cụt Pingu 🐧</span>
+                </div>
+
+                <!-- Chibi 6: Cáo Cáo (Fox) -->
+                <div onclick="interactChibi(this, 'Tuổi mới thông minh, rạng rỡ nha! 🦊🔥')" class="chibi-dancer dance-6 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="75" rx="20" ry="18" fill="#f97316" />
+                            <ellipse cx="50" cy="77" rx="12" ry="11" fill="#FFF" />
+                            <polygon points="25,50 75,50 50,78" fill="#f97316" />
+                            <circle cx="50" cy="45" r="25" fill="#f97316" />
+                            <polygon points="30,48 70,48 50,72" fill="#FFFFFF" />
+                            <polygon points="25,30 35,8 48,28" fill="#f97316" />
+                            <polygon points="28,27 35,13 43,26" fill="#be185d" />
+                            <polygon points="75,30 65,8 52,28" fill="#f97316" />
+                            <polygon points="72,27 65,13 57,26" fill="#be185d" />
+                            <ellipse cx="38" cy="40" rx="3" ry="4" fill="#4c1d95" />
+                            <ellipse cx="62" cy="40" rx="3" ry="4" fill="#4c1d95" />
+                            <circle cx="50" cy="55" r="3" fill="#be185d" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Cáo Foxy 🦊</span>
+                </div>
+
+                <!-- Chibi 7: Gấu Trúc (Panda) -->
+                <div onclick="interactChibi(this, 'Nhận bão quà tặng 11/11 nhé Trâm! 🐼🎁')" class="chibi-dancer dance-7 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="75" rx="22" ry="18" fill="#FFFFFF" />
+                            <circle cx="28" cy="72" r="7" fill="#4c1d95" />
+                            <circle cx="72" cy="72" r="7" fill="#4c1d95" />
+                            <circle cx="50" cy="44" r="26" fill="#FFFFFF" />
+                            <circle cx="28" cy="24" r="8" fill="#4c1d95" />
+                            <circle cx="72" cy="24" r="8" fill="#4c1d95" />
+                            <ellipse cx="38" cy="43" rx="7" ry="5.5" fill="#4c1d95" transform="rotate(-15 38 43)" />
+                            <ellipse cx="62" cy="43" rx="7" ry="5.5" fill="#4c1d95" transform="rotate(15 62 43)" />
+                            <circle cx="39" cy="43" r="2" fill="#FFF" />
+                            <circle cx="61" cy="43" r="2" fill="#FFF" />
+                            <ellipse cx="50" cy="48" rx="3" ry="2" fill="#881337" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Panda 🐼</span>
+                </div>
+
+                <!-- Chibi 8: Ếch Cốm (Frog) -->
+                <div onclick="interactChibi(this, 'Bộp bộp! Nhảy múa ăn mừng Trâm! 🐸💖')" class="chibi-dancer dance-8 cursor-pointer group flex flex-col items-center">
+                    <div class="speech-bubble hidden absolute -top-12 bg-white text-purple-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-2xl border-2 border-pink-400 z-50 whitespace-nowrap animate-bounce"></div>
+                    <div class="chibi-avatar w-20 sm:w-24 h-24 sm:h-28 transition-transform group-hover:scale-125">
+                        <svg viewBox="0 0 100 110" class="w-full h-full drop-shadow-xl">
+                            <ellipse cx="50" cy="75" rx="20" ry="16" fill="#4ade80" />
+                            <ellipse cx="50" cy="76" rx="13" ry="10" fill="#dcfce7" />
+                            <ellipse cx="50" cy="46" rx="27" ry="20" fill="#4ade80" />
+                            <circle cx="34" cy="28" r="10" fill="#4ade80" />
+                            <circle cx="34" cy="28" r="7" fill="#FFF" />
+                            <circle cx="34" cy="28" r="3.5" fill="#14532d" />
+                            <circle cx="66" cy="28" r="10" fill="#4ade80" />
+                            <circle cx="66" cy="28" r="7" fill="#FFF" />
+                            <circle cx="66" cy="28" r="3.5" fill="#14532d" />
+                            <path d="M 40 50 Q 50 58 60 50" fill="none" stroke="#166534" stroke-width="2.5" stroke-linecap="round" />
+                            <circle cx="32" cy="48" r="3.5" fill="#f472b6" opacity="0.6" />
+                            <circle cx="68" cy="48" r="3.5" fill="#f472b6" opacity="0.6" />
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-pink-100 bg-purple-950/80 px-2.5 py-0.5 rounded-full border border-pink-400/40 shadow mt-1">Ếch Kermit 🐸</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE BIRTHDAY CAKE SECTION -->
+        <section class="glass-card rounded-3xl p-8 sm:p-12 text-center flex flex-col items-center relative overflow-hidden border border-pink-400/30">
+            <h2 class="text-2xl sm:text-3xl font-bold text-pink-200 mb-2">Thổi Nến & Ước Một Điều Ước ✨</h2>
+            <p class="text-xs sm:text-sm text-pink-300/90 mb-8 max-w-md">Chạm vào chiếc bánh sinh nhật hoặc bấm nút bên dưới để thắp sáng/thổi tắt ngọn nến kỳ diệu!</p>
+
+            <!-- CSS Animated Cake -->
+            <div id="cakeContainer" onclick="toggleCandles()" class="cursor-pointer my-6 relative transition-transform duration-300 hover:scale-105">
+                <!-- Candles -->
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 flex justify-center gap-6 z-20">
+                    <!-- Candle 1 -->
+                    <div class="relative flex flex-col items-center">
+                        <div id="flame1" class="flame w-3.5 h-6 mb-1"></div>
+                        <div class="w-3 h-10 bg-gradient-to-b from-pink-200 to-pink-400 rounded-t-sm shadow-inner"></div>
+                    </div>
+                    <!-- Candle 2 (Center - Main) -->
+                    <div class="relative flex flex-col items-center -mt-2">
+                        <div id="flame2" class="flame w-4 h-7 mb-1"></div>
+                        <div class="w-3.5 h-12 bg-gradient-to-b from-white to-purple-400 rounded-t-sm shadow-inner"></div>
+                    </div>
+                    <!-- Candle 3 -->
+                    <div class="relative flex flex-col items-center">
+                        <div id="flame3" class="flame w-3.5 h-6 mb-1"></div>
+                        <div class="w-3 h-10 bg-gradient-to-b from-pink-200 to-pink-400 rounded-t-sm shadow-inner"></div>
+                    </div>
+                </div>
+
+                <!-- Cake Layers -->
+                <div class="w-48 sm:w-64 h-40 flex flex-col items-center justify-end relative">
+                    <!-- Top Cream Drips -->
+                    <div class="w-40 sm:w-52 h-10 bg-pink-100 rounded-t-2xl relative z-10 border-b-4 border-pink-300 flex justify-around items-end">
+                        <div class="w-4 h-4 bg-pink-100 rounded-full -mb-2"></div>
+                        <div class="w-6 h-6 bg-pink-100 rounded-full -mb-3"></div>
+                        <div class="w-5 h-5 bg-pink-100 rounded-full -mb-2"></div>
+                        <div class="w-6 h-6 bg-pink-100 rounded-full -mb-3"></div>
+                    </div>
+                    <!-- Middle Layer -->
+                    <div class="w-44 sm:w-56 h-12 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 relative z-0 flex items-center justify-center">
+                        <span class="text-xs tracking-widest text-pink-100 font-bold uppercase">11 • 11</span>
+                    </div>
+                    <!-- Bottom Layer -->
+                    <div class="w-48 sm:w-64 h-16 bg-gradient-to-r from-purple-900 via-pink-900 to-purple-900 rounded-b-2xl border-t-4 border-pink-400/40 relative shadow-2xl flex items-center justify-around px-4">
+                        <i class="fa-solid fa-heart text-pink-400/60 text-sm"></i>
+                        <i class="fa-solid fa-crown text-warmGold/80 text-lg"></i>
+                        <i class="fa-solid fa-heart text-pink-400/60 text-sm"></i>
+                    </div>
+                    <!-- Cake Plate -->
+                    <div class="w-56 sm:w-72 h-4 bg-slate-200/90 rounded-full shadow-lg -mt-1 border-b-2 border-slate-400"></div>
+                </div>
+            </div>
+
+            <!-- Blow Candles Button -->
+            <button onclick="toggleCandles()" class="mt-6 glass-button px-6 py-2.5 rounded-full text-pink-100 text-sm font-semibold flex items-center gap-2">
+                <i class="fa-solid fa-wind text-pink-300"></i>
+                <span id="candleBtnText">Thổi Nến Ước Giấc Mơ</span>
+            </button>
+        </section>
+
+        <!-- FLOATING BALLOONS INTERACTIVE ZONE -->
+        <section class="text-center">
+            <h2 class="text-2xl font-bold text-pink-200 mb-2">Bóng Bay May Mắn 🎈</h2>
+            <p class="text-xs text-pink-300/90 mb-6">Chạm/Click vào những quả bóng để nhận bong bóng pháo hoa niềm vui!</p>
+
+            <div id="balloonContainer" class="flex flex-wrap justify-center items-center gap-6 sm:gap-10 py-6">
+                <!-- Interactive Balloons generated via JS -->
+            </div>
+        </section>
+
+        <!-- UNWRAP GIFT BOX SECTION -->
+        <section class="glass-card rounded-3xl p-8 sm:p-12 text-center flex flex-col items-center relative border border-pink-400/30">
+            <h2 class="text-2xl sm:text-3xl font-bold text-pink-200 mb-2">Hộp Quà Bất Ngờ Dành Cho Trâm 🎁</h2>
+            <p class="text-xs sm:text-sm text-pink-300/90 mb-8">Nhấn vào hộp quà để mở thông điệp đặc biệt!</p>
+
+            <div id="giftBox" onclick="openGift()" class="gift-box cursor-pointer relative w-36 h-36 sm:w-44 sm:h-44 my-4 flex flex-col items-center justify-center">
+                <!-- Lid -->
+                <div class="gift-lid absolute top-0 w-40 sm:w-48 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-md shadow-lg z-20 flex items-center justify-center border-b-2 border-white">
+                    <!-- Ribbon Bow -->
+                    <div class="w-8 h-8 bg-warmGold rounded-full absolute -top-4 shadow-md flex items-center justify-center">
+                        <div class="w-3 h-3 bg-yellow-600 rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Box Body -->
+                <div class="w-36 sm:w-44 h-28 sm:h-36 bg-gradient-to-br from-purple-800 to-pink-900 rounded-b-lg shadow-2xl relative overflow-hidden border-t border-pink-400/40 flex items-center justify-center">
+                    <!-- Vertical Ribbon -->
+                    <div class="w-8 h-full bg-warmGold shadow-inner"></div>
+                    <!-- Sparkle Icon -->
+                    <i class="fa-solid fa-star text-white/40 text-3xl absolute animate-spin" style="animation-duration: 8s;"></i>
+                </div>
+            </div>
+            
+            <p class="text-xs text-pink-300/90 mt-4 italic">Chạm nhẹ để mở quà...</p>
+        </section>
+
+        <!-- SWEET WISHES GRID WITH FIXED SVG ICONS -->
+        <section class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-pink-200 mb-2">Lời Chúc Ngọt Ngào Nhất 💌</h2>
+                <p class="text-xs sm:text-sm text-pink-300/90">Những điều tuyệt vời nhất dành tặng cho tuổi mới của Trâm</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Wish Card 1: Hạnh Phúc & An Yên -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:border-pink-300/70">
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-200 text-2xl mb-4 border border-pink-400/30">
+                        <svg class="w-7 h-7 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-pink-200 mb-2">Luôn Hạnh Phúc & An Yên</h3>
+                    <p class="text-xs sm:text-sm text-pink-100/90 leading-relaxed">
+                        Mong rằng tuổi mới sẽ mang đến cho Trâm thật nhiều niềm vui, nụ cười luôn nở trên môi và những phút giây bình yên bên gia đình & bạn bè.
+                    </p>
+                </div>
+
+                <!-- Wish Card 2: Xinh Đẹp & Rạng Rỡ -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:border-pink-300/70">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-pink-200 text-2xl mb-4 border border-pink-400/30">
+                        <svg class="w-7 h-7 text-warmGold drop-shadow" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L14.5 8.5L21 11L14.5 13.5L12 20L9.5 13.5L3 11L9.5 8.5L12 2Z"/>
+                            <path d="M18 2L19.2 5.2L22.4 6.4L19.2 7.6L18 10.8L16.8 7.6L13.6 6.4L16.8 5.2L18 2Z" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-pink-200 mb-2">Xinh Đẹp & Rạng Rỡ</h3>
+                    <p class="text-xs sm:text-sm text-pink-100/90 leading-relaxed">
+                        Chúc Trâm ngày càng xinh đẹp, tự tin, rạng rỡ như ánh mai trong trẻo và luôn tràn đầy năng lượng tích cực!
+                    </p>
+                </div>
+
+                <!-- Wish Card 3: Thành Công & Rực Rỡ -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:border-pink-300/70">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-warmGold text-2xl mb-4 border border-amber-400/30">
+                        <svg class="w-7 h-7 text-warmGold" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-pink-200 mb-2">Thành Công & Rực Rỡ</h3>
+                    <p class="text-xs sm:text-sm text-pink-100/90 leading-relaxed">
+                        Chúc cho mọi ước mơ, dự định và mục tiêu của Trâm trong tuổi mới đều sẽ gặt hái được những thành công rực rỡ nhất!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 text-center py-6 border-t border-pink-500/20 text-xs text-pink-300/80">
+        <p>Created with 💖 for Trâm • 11/11 Birthday Celebration</p>
+    </footer>
+
+    <!-- POPUP MODAL FOR GIFT CARD -->
+    <div id="giftModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 relative text-center border-2 border-pink-400/50 shadow-2xl scale-90 transition-transform duration-300" id="modalCard">
+            <!-- Close Button -->
+            <button onclick="closeGift()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-pink-100">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Card Content -->
+            <div class="w-16 h-16 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-200 text-3xl mx-auto mb-4 border border-pink-400/30">
+                <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+
+            <h3 class="font-romantic text-3xl sm:text-4xl text-pink-200 mb-3">Thư Gửi Trâm! 💌</h3>
+
+            <div class="text-xs sm:text-sm text-pink-100 space-y-3 leading-relaxed text-left my-4 max-h-60 overflow-y-auto pr-2">
+                <p>Gửi Trâm,</p>
+                <p>Nhân ngày sinh nhật 11/11 - một ngày vô cùng đặc biệt, chúc Trâm bước sang tuổi mới luôn gặp thật nhiều may mắn, ngọt ngào và hạnh phúc.</p>
+                <p>Mong rằng hành trình phía trước của Trâm luôn ngập tràn ánh nắng, niềm vui và những cơ hội tuyệt vời. Hãy luôn là chính mình - một cô gái vô cùng tuyệt vời, tỏa sáng và đáng yêu nhé!</p>
+                <p class="text-right font-cursive text-lg text-pink-300 font-bold pt-2">Happy Birthday! 🎉🎂 ✨</p>
+            </div>
+
+            <button onclick="closeGift()" class="mt-4 glass-button px-6 py-2 rounded-full text-xs font-semibold text-pink-100 uppercase tracking-wider">
+                Đóng Thư
+            </button>
+        </div>
+    </div>
+
+    <!-- AUDIO SYNTHESIZER & GAME LOGIC SCRIPT -->
+    <script>
+        /* ----------------------------------------------------
+           CHIBI ANIMATION & SCREEN PARTY MODE LOGIC
+        ---------------------------------------------------- */
+        let partyMode = false;
+
+        function togglePartyMode() {
+            partyMode = !partyMode;
+            const partyBtnText = document.getElementById('partyBtnText');
+            const body = document.body;
+
+            if (partyMode) {
+                partyBtnText.innerText = "Tắt Chế Độ Party (Đang Quẩy Rực Rỡ!) ✨";
+                body.classList.add('party-mode');
+
+                triggerConfetti();
+                setTimeout(triggerConfetti, 400);
+            } else {
+                partyBtnText.innerText = "Bật Vũ Điệu Chibi Nhảy Siêu Nhanh! 🪩";
+                body.classList.remove('party-mode');
+            }
+        }
+
+        function interactChibi(element, wishText) {
+            const bubble = element.querySelector('.speech-bubble');
+            const avatar = element.querySelector('.chibi-avatar');
+
+            bubble.innerText = wishText;
+            bubble.classList.remove('hidden');
+
+            avatar.style.transform = 'scale(1.4) rotate(360deg)';
+            avatar.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 30,
+                    spread: 50,
+                    colors: ['#f472b6', '#e879f9', '#FFD700', '#FFFFFF'],
+                    origin: { y: 0.5 }
+                });
+            }
+
+            setTimeout(() => {
+                avatar.style.transform = 'none';
+            }, 600);
+
+            setTimeout(() => {
+                bubble.classList.add('hidden');
+            }, 3500);
+        }
+
+        /* ----------------------------------------------------
+           1. COUNTDOWN TIMER (TO NOVEMBER 11TH)
+        ---------------------------------------------------- */
+        function updateCountdown() {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            let targetDate = new Date(currentYear, 10, 11);
+
+            if (now > targetDate && !(now.getMonth() === 10 && now.getDate() === 11)) {
+                targetDate = new Date(currentYear + 1, 10, 11);
+            }
+
+            const diff = targetDate - now;
+
+            const daysElem = document.getElementById('days');
+            const hoursElem = document.getElementById('hours');
+            const minutesElem = document.getElementById('minutes');
+            const secondsElem = document.getElementById('seconds');
+            const messageElem = document.getElementById('countdownMessage');
+
+            if (now.getMonth() === 10 && now.getDate() === 11) {
+                daysElem.innerText = "00";
+                hoursElem.innerText = "00";
+                minutesElem.innerText = "00";
+                secondsElem.innerText = "00";
+                messageElem.innerText = "🎉 Hôm nay chính là ngày sinh nhật 11/11 của Trâm! Chúc Trâm một ngày ngập tràn niềm vui! 🎂✨";
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            daysElem.innerText = d < 10 ? '0' + d : d;
+            hoursElem.innerText = h < 10 ? '0' + h : h;
+            minutesElem.innerText = m < 10 ? '0' + m : m;
+            secondsElem.innerText = s < 10 ? '0' + s : s;
+            messageElem.innerText = "Đang đếm ngược từng giây đến ngày sinh nhật 11/11 của Trâm ✨";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        /* ----------------------------------------------------
+           2. CANDLE TOGGLE & CONFETTI
+        ---------------------------------------------------- */
+        let candlesLit = true;
+
+        function toggleCandles() {
+            const flames = [document.getElementById('flame1'), document.getElementById('flame2'), document.getElementById('flame3')];
+            const btnText = document.getElementById('candleBtnText');
+
+            if (candlesLit) {
+                flames.forEach(f => f.style.display = 'none');
+                btnText.innerText = 'Thắp Sáng Lại Nến';
+                candlesLit = false;
+
+                triggerConfetti();
+            } else {
+                flames.forEach(f => f.style.display = 'block');
+                btnText.innerText = 'Thổi Nến Ước Giấc Mơ';
+                candlesLit = true;
+            }
+        }
+
+        function triggerConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    colors: ['#f472b6', '#e879f9', '#FFD700', '#FFFFFF', '#c084fc'],
+                    origin: { y: 0.6 }
+                });
+            }
+        }
+
+        /* ----------------------------------------------------
+           3. GENERATE INTERACTIVE BALLOONS
+        ---------------------------------------------------- */
+        const balloonColors = ['#f472b6', '#e879f9', '#c084fc', '#f43f5e', '#FFD700', '#a855f7'];
+
+        function initBalloons() {
+            const container = document.getElementById('balloonContainer');
+            container.innerHTML = '';
+
+            for (let i = 0; i < 6; i++) {
+                const balloon = document.createElement('div');
+                const color = balloonColors[i % balloonColors.length];
+
+                balloon.className = "animate-float cursor-pointer flex flex-col items-center transition-transform hover:scale-110 active:scale-95";
+                balloon.style.animationDelay = `${i * 0.5}s`;
+
+                balloon.innerHTML = `
+                    <div class="w-12 h-16 sm:w-16 sm:h-20 rounded-full shadow-lg relative flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, #fff, ${color});">
+                        <i class="fa-solid fa-heart text-white/40 text-xs sm:text-sm"></i>
+                    </div>
+                    <div class="w-1 h-8 sm:h-10 bg-white/40"></div>
+                `;
+
+                balloon.onclick = (e) => {
+                    popBalloon(e, balloon);
+                };
+
+                container.appendChild(balloon);
+            }
+        }
+
+        function popBalloon(event, element) {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 30,
+                    spread: 50,
+                    colors: ['#f472b6', '#e879f9', '#FFFFFF'],
+                    origin: {
+                        x: event.clientX / window.innerWidth,
+                        y: event.clientY / window.innerHeight
+                    }
+                });
+            }
+
+            element.style.opacity = '0';
+            element.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.pointerEvents = 'auto';
+            }, 2500);
+        }
+
+        initBalloons();
+
+        /* ----------------------------------------------------
+           4. VIRTUAL GIFT BOX MODAL
+        ---------------------------------------------------- */
+        function openGift() {
+            const giftBox = document.getElementById('giftBox');
+            const modal = document.getElementById('giftModal');
+            const card = document.getElementById('modalCard');
+
+            giftBox.classList.add('opened');
+
+            triggerConfetti();
+
+            setTimeout(() => {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                card.classList.remove('scale-90');
+                card.classList.add('scale-100');
+            }, 400);
+        }
+
+        function closeGift() {
+            const giftBox = document.getElementById('giftBox');
+            const modal = document.getElementById('giftModal');
+            const card = document.getElementById('modalCard');
+
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-90');
+
+            setTimeout(() => {
+                giftBox.classList.remove('opened');
+            }, 300);
+        }
+
+        /* ----------------------------------------------------
+           5. CANVAS PARTICLES (Floating Rose Hearts & Sparkles)
+        ---------------------------------------------------- */
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 20;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * 1.2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.opacity = Math.random() * 0.6 + 0.2;
+                this.color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < -20) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                const topCurveHeight = this.size * 0.3;
+                ctx.moveTo(this.x, this.y + topCurveHeight);
+                ctx.bezierCurveTo(this.x, this.y, this.x - this.size / 2, this.y, this.x - this.size / 2, this.y + topCurveHeight);
+                ctx.bezierCurveTo(this.x - this.size / 2, this.y + (this.size + topCurveHeight) / 2, this.x, this.y + this.size, this.x, this.y + this.size);
+                ctx.bezierCurveTo(this.x, this.y + (this.size + topCurveHeight) / 2, this.x + this.size / 2, this.y + topCurveHeight, this.x + this.size / 2, this.y);
+                ctx.bezierCurveTo(this.x + this.size / 2, this.y, this.x, this.y, this.x, this.y + topCurveHeight);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function createParticles() {
+            particles = [];
+            const count = Math.min(Math.floor(window.innerWidth / 25), 40);
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        createParticles();
+        animateParticles();
+
+        /* ----------------------------------------------------
+           6. SYNTHESIZED HAPPY BIRTHDAY MELODY (Web Audio API)
+        ---------------------------------------------------- */
+        let audioCtx = null;
+        let isPlaying = false;
+        let melodyTimeout = null;
+
+        const notes = [
+            { note: 261.63, duration: 0.4 },
+            { note: 261.63, duration: 0.4 },
+            { note: 293.66, duration: 0.8 },
+            { note: 261.63, duration: 0.8 },
+            { note: 349.23, duration: 0.8 },
+            { note: 329.63, duration: 1.2 },
+
+            { note: 261.63, duration: 0.4 },
+            { note: 261.63, duration: 0.4 },
+            { note: 293.66, duration: 0.8 },
+            { note: 261.63, duration: 0.8 },
+            { note: 392.00, duration: 0.8 },
+            { note: 349.23, duration: 1.2 },
+
+            { note: 261.63, duration: 0.4 },
+            { note: 261.63, duration: 0.4 },
+            { note: 523.25, duration: 0.8 },
+            { note: 440.00, duration: 0.8 },
+            { note: 349.23, duration: 0.8 },
+            { note: 329.63, duration: 0.8 },
+            { note: 293.66, duration: 1.2 },
+
+            { note: 466.16, duration: 0.4 },
+            { note: 466.16, duration: 0.4 },
+            { note: 440.00, duration: 0.8 },
+            { note: 349.23, duration: 0.8 },
+            { note: 392.00, duration: 0.8 },
+            { note: 349.23, duration: 1.5 }
+        ];
+
+        function playNote(freq, duration) {
+            if (!audioCtx || audioCtx.state === 'closed') return;
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.05);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration - 0.05);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        function playMelody(index = 0) {
+            if (!isPlaying) return;
+
+            if (index >= notes.length) {
+                index = 0;
+            }
+
+            const current = notes[index];
+            playNote(current.note, current.duration);
+
+            melodyTimeout = setTimeout(() => {
+                if (isPlaying) playMelody(index + 1);
+            }, current.duration * 1000 + 50);
+        }
+
+        function toggleAudio() {
+            const musicText = document.getElementById('musicText');
+            const musicIcon = document.getElementById('musicIcon');
+
+            if (!isPlaying) {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                isPlaying = true;
+                musicText.innerText = "Tắt Nhạc";
+                musicIcon.className = "fa-solid fa-volume-high text-xl animate-pulse text-warmGold";
+                playMelody();
+            } else {
+                isPlaying = false;
+                clearTimeout(melodyTimeout);
+                musicText.innerText = "Phát Nhạc";
+                musicIcon.className = "fa-solid fa-music text-xl animate-bounce";
+            }
+        }
+    </script>
+</body>
+</html>
